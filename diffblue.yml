@@ -1,4 +1,5 @@
-buildCmd: cd ./java; ./gradlew assemble
+buildCmd: cd ./java; sh ./gradlew assemble
+classpathCmd: cat ./java/diffblue-classpath.txt
 testCmd: true
 lineLength: 4096
 skipVerification: true

@@ -90,3 +90,12 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc'
     from javadoc.destinationDir
 }
+task diffbluePrintClasspath {
+	doLast {
+		def file = new File('diffblue-classpath.txt')
+		file.write('.')
+		configurations.testRuntime.each {
+			file.append(':'+it.toString())
+		}
+	}
+}
